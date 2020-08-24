@@ -1,4 +1,9 @@
 package com.rewow.service.PetSize;
 
-public class IPetSizeService {
+import com.rewow.entities.PetSizeEntity;
+
+import java.util.List;
+
+public interface IPetSizeService {
+    List<PetSizeEntity> findAll();
 }

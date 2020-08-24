@@ -1,36 +1,26 @@
 package com.rewow.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "clinical_history", schema = "public", catalog = "d76p9hqs38cjgf")
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ClinicalHistoryEntity {
-    private Integer idHistory;
-
     @Id
     @Column(name = "id_history")
-    public Integer getIdHistory() {
-        return idHistory;
-    }
+    private Integer idHistory;
 
-    public void setIdHistory(Integer idHistory) {
-        this.idHistory = idHistory;
-    }
+    @Basic
+    @Column(name = "pet_id_pet")
+    private Integer petIdPet;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ClinicalHistoryEntity that = (ClinicalHistoryEntity) o;
-        return Objects.equals(idHistory, that.idHistory);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idHistory);
-    }
 }

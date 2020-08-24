@@ -1,4 +1,9 @@
 package com.rewow.repository.PetSize.impl;
 
-public class PetSIzeRepositoryFacade {
+import com.rewow.entities.PetSizeEntity;
+
+import java.util.List;
+
+public interface PetSIzeRepositoryFacade {
+    List<PetSizeEntity> findAll();
 }
